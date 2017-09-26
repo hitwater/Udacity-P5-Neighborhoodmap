@@ -90,7 +90,7 @@ var ViewModel = function() {
 * Implement the Wikipedia API
 */
         function wikiAPI() {
-            var wikiURL = 'http://en.wikipedia.org/w/api.php?action=opensearch&search=' + name + '&format=json&callback=wikiCallback';
+            var wikiURL = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + name + '&format=json&callback=wikiCallback';
             var wikiRequestTimeout = setTimeout(function() {
                 infowindow.setContent('Error loading Wikipedia links! Please try again later.');
             }, 5000);
@@ -106,7 +106,7 @@ var ViewModel = function() {
                         }
                     for (var i = 0; i < articles.length; i++) {
                         articlename = articles[i];
-                        var url = 'http://en.wikipedia.org/wiki/' + articlename;
+                        var url = 'https://en.wikipedia.org/wiki/' + articlename;
                         self.wikiList.push(new wiki(articlename, url));
                     }
                     clearTimeout(wikiRequestTimeout);
